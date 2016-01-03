@@ -10,6 +10,8 @@
 module.exports = function (grunt) {
 
   var pkg = require('./package.json');
+  
+  grunt.loadNpmTasks('grunt-build-control');
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
@@ -451,6 +453,14 @@ module.exports = function (grunt) {
         'svgmin'
       ]
     },
+
+    // Test settings
+    karma: {
+      unit: {
+        configFile: 'test/karma.conf.js',
+        singleRun: true
+      }
+    },
     
     buildcontrol: {
       options: {
@@ -465,30 +475,21 @@ module.exports = function (grunt) {
           branch: 'gh-pages'
         }
       },
-      //   heroku: {
-      //     options: {
-      //       remote: 'git@heroku.com:example-heroku-webapp-1988.git',
-      //       branch: 'master',
-      //       tag: pkg.version
-      //     }
-      //   },
+      heroku: {
+        options: {
+          remote: 'git@heroku.com:example-heroku-webapp-1988.git',
+          branch: 'master',
+          tag: pkg.version
+        }
+      },
       local: {
         options: {
           remote: '../',
           branch: 'build'
         }
       }
-    },
-
-    // Test settings
-    karma: {
-      unit: {
-        configFile: 'test/karma.conf.js',
-        singleRun: true
-      }
     }
   });
-
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
