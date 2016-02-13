@@ -12,7 +12,16 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 body {
+  width: 100%;
+  height: 100%;
   padding: 0;
+  background: #FFF;
+  color: #777;
+}
+
+html {
+    width: 100%;
+    height: 100%;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -89,4 +98,38 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+.navbar-custom
+{
+    border-bottom-style: dotted;
+    border-bottom-color: dimgray;
+    
+}
+
+.center-block {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    float:none;
+    text-align: center;
+    
+    span {
+        display: block;
+    }
+    
+    span.top
+    {
+        margin-top: 15px;
+    }
+}
+ 
+div.copyright
+{
+    margin-top: 45px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8em;
+    color: gray;
+    text-align: center;
 }

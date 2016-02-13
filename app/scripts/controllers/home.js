@@ -8,7 +8,7 @@
  * Controller of the personalWebsiteApp
  */
 angular.module('personalWebsiteApp')
-  .controller('MainCtrl', function () {
+  .controller('HomeCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

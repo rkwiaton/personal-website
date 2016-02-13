@@ -8,28 +8,23 @@
  *
  * Main module of the application.
  */
-angular
-  .module('personalWebsiteApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
+var app = angular.module('personalWebsiteApp', ['ngRoute'])
+  
+app.config(function($routeProvider){
+     $routeProvider
+     .when('/', {
+         controller: 'RouteCtrl',
+         templateUrl: 'views/uirouter.html'
+     })
+     .otherwise({
         redirectTo: '/'
-      });
-  });
+     });
+ });
+
+app.directive('contact-form', function(){
+   return {
+        restrict: 'AE',
+        replace: true,
+        template: '<h1>aaaa</h1>'
+   };
+});
